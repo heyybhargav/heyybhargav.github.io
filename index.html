@@ -11,16 +11,23 @@
 
 <body>
     <main>
+        <nav class="sidebar-nav" aria-label="Page sections">
+            <a href="#value-add" class="sidebar-link">Value Add</a>
+            <a href="#experience" class="sidebar-link">Experience</a>
+            <a href="#projects" class="sidebar-link">Featured Work</a>
+            <a href="#life-education" class="sidebar-link">Beyond Code</a>
+            <a href="#writing" class="sidebar-link">Writing</a>
+        </nav>
         <header>
-            <img src="./photo.png" alt="Bhargav Chaudhari" style="width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin-bottom: 1.25rem; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: block;">
             <h1>Hey, I'm Bhargav 👋</h1>
             <p class="intro">
                 I'm an AI operator and builder who loves to learn by creating impact. I enjoy taking ideas from
                 <strong>0 to 1</strong>, driving growth, and exploring the future of technology.
             </p>
             <div class="links" style="align-items: center; gap: 0.6rem;">
-                <a href="https://heyybhargav.substack.com" target="_blank" class="nav-link">Writing</a>
-                <a href="https://siftl.com" target="_blank" class="nav-link">Projects</a>
+                <a href="./index.html" class="nav-link active">Home</a>
+                <a href="./projects.html" class="nav-link">Projects</a>
+                <a href="./writing.html" class="nav-link">Writing</a>
                 <a href="mailto:cbhargav2002@gmail.com" class="nav-link">Contact</a>
                 <div style="display: flex; gap: 0.6rem; align-items: center; margin-left: 0.1rem;">
                     <a href="https://linkedin.com/in/bhargav-chaudhari" target="_blank" class="nav-link icon-link" aria-label="LinkedIn">
@@ -37,10 +44,8 @@
             </div>
         </header>
 
-        <section>
+        <section id="value-add">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; margin-top: 5rem;">
-                <span
-                    style="font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text-tertiary);">01</span>
                 <div style="flex: 1; height: 1px; background: var(--border);"></div>
                 <span
                     style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Value
@@ -49,7 +54,7 @@
 
             <h2
                 style="margin-top: 0; margin-bottom: 1rem; font-size: clamp(2.2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.04em;">
-                What I bring to <br><span style="color: var(--text-tertiary);">a high-growth team.</span>
+                What I bring to <br><span style="color: var(--text-tertiary);">a high-growth team</span>
             </h2>
             <p
                 style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; line-height: 1.6;">
@@ -58,18 +63,18 @@
             </p>
 
             <div class="cards-grid">
-                <div class="card card-1">
+                <div class="card">
                     <h3>Building & Execution</h3>
                     <p>I love figuring out how to get products into users' hands rapidly without sacrificing quality.
                         Whether it's helping scale Provue AI to 300k+ users or building Siftl, my focus is on aggressive
                         execution and distribution.</p>
                 </div>
-                <div class="card card-2">
+                <div class="card">
                     <h3>Scalable GTM Strategy</h3>
                     <p>Building the product is only half the equation. I drove 5M+ organic views for Provue AI by
                         designing creator-led go-to-market motions and structuring continuous acquisition loops.</p>
                 </div>
-                <div class="card card-3">
+                <div class="card">
                     <h3>Investor Lens</h3>
                     <p>Having evaluated deeptech and GenAI companies at Samarthya and Eximius, I like to analyze
                         consumer products through a rigid lens of market viability and defensibility.</p>
@@ -77,10 +82,8 @@
             </div>
         </section>
 
-        <section>
+        <section id="experience">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
-                <span
-                    style="font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text-tertiary);">02</span>
                 <div style="flex: 1; height: 1px; background: var(--border);"></div>
                 <span
                     style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Experience</span>
@@ -88,7 +91,7 @@
 
             <h2
                 style="margin-top: 0; margin-bottom: 2rem; font-size: clamp(2rem, 4vw, 2.4rem); letter-spacing: -0.03em;">
-                Impact & Execution.
+                Impact & Execution
             </h2>
 
             <div class="work-item">
@@ -106,47 +109,71 @@
             </div>
         </section>
 
-        <section>
+        <section id="projects">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
-                <span
-                    style="font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text-tertiary);">03</span>
                 <div style="flex: 1; height: 1px; background: var(--border);"></div>
                 <span
-                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Out
-                    of Office</span>
+                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Projects</span>
             </div>
 
             <h2
                 style="margin-top: 0; margin-bottom: 2rem; font-size: clamp(2rem, 4vw, 2.4rem); letter-spacing: -0.03em;">
-                Life & Education.
+                Featured Work
+            </h2>
+
+            <div class="cards-grid-2">
+                <div class="card">
+                    <h3>Provue AI</h3>
+                    <p>Designed creator-led acquisition systems that scaled Pazago's AI tool to 300k+ active users and top App Store rankings.</p>
+                    <a href="./projects.html#provue" class="card-link">View Case Study &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Siftl</h3>
+                    <p>My solo-built AI-powered content curation SaaS. Engineered robust CRON systems to process and parse over 10k+ data points daily.</p>
+                    <a href="./projects.html#siftl" class="card-link">View Case Study &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Acharya</h3>
+                    <p>An AI-powered personal tutor that enables users to learn anything from any lecture, podcast, or video using YouTube links and audio uploads.</p>
+                    <a href="./projects.html#acharya" class="card-link">View Case Study &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>The Token Revolution</h3>
+                    <p>An interactive, data-rich explainer of Ribbit Capital's June 2025 thesis on the tokenized agentic economy, stablecoin flywheels, and machine legibility.</p>
+                    <a href="./projects.html#token-revolution" class="card-link">View Case Study &rarr;</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: left;">
+                <a href="./projects.html" class="btn">Explore all projects &rarr;</a>
+            </div>
+        </section>
+
+        <section id="life-education">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
+                <div style="flex: 1; height: 1px; background: var(--border);"></div>
+                <span
+                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Life & Education</span>
+            </div>
+
+            <h2
+                style="margin-top: 0; margin-bottom: 2rem; font-size: clamp(2rem, 4vw, 2.4rem); letter-spacing: -0.03em;">
+                Beyond the Code
             </h2>
 
             <div class="work-item" style="margin-bottom: 2rem;">
                 <h3 style="margin-bottom: 0.2rem;">Indian Institute of Technology, Bombay</h3>
-                <p>B.S. Economics (2020 - 2024). During my time here, I engaged heavily with the Entrepreneurship Cell
-                    as Media & Marketing Head, and served as Chief Editor for EnSpace magazine.</p>
-            </div>
-
-            <div class="work-item" style="margin-bottom: 2rem;">
-                <h3 style="margin-bottom: 0.2rem;">Life beyond work</h3>
-                <p>I secured a deferred admit to ISB's MBA program (GMAT Focus: 715), but ultimately dropped it to build
-                    and operate in high-growth startups. Outside of my professional life, you'll usually find me playing
-                    the guitar, reading, writing, and constantly learning.</p>
+                <p>B.S. Economics (2020 - 2024). Managed media and marketing for the Entrepreneurship Cell as Head, and served as Chief Editor for EnSpace magazine.</p>
             </div>
 
             <div class="work-item">
-                <h3 style="margin-bottom: 0.2rem;"><a href="https://siftl.com" target="_blank">Siftl (Side Project)</a>
-                </h3>
-                <p>My solo-built AI-powered content curation SaaS. I led full-stack execution entirely as a side
-                    project, programming CRON workers to parse 10k+ data points daily inside a zero-cost backend
-                    infrastructure.</p>
+                <h3 style="margin-bottom: 0.2rem;">Life beyond work</h3>
+                <p>Deferred admission to ISB's MBA program (GMAT Focus: 715) to build and operate at scale. Outside of building, I read, write, play the guitar, and constantly learn.</p>
             </div>
         </section>
 
-        <section>
+        <section id="writing">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
-                <span
-                    style="font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text-tertiary);">04</span>
                 <div style="flex: 1; height: 1px; background: var(--border);"></div>
                 <span
                     style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Writing</span>
@@ -154,13 +181,11 @@
 
             <h2
                 style="margin-top: 0; margin-bottom: 1.5rem; font-size: clamp(2rem, 4vw, 2.4rem); letter-spacing: -0.03em;">
-                Thoughts & Essays.
+                Thoughts & Essays
             </h2>
 
             <p style="margin-bottom: 2.5rem; font-size: 1.1rem;">I maintain <a href="https://heyybhargav.substack.com"
-                    target="_blank">Growth Gazette</a>, a personal blog analyzing AI, mastery, and craft. It serves as a
-                running record of my evolving understanding of whatever I learn through observation, experimentation and
-                reading.</p>
+                    target="_blank">Growth Gazette</a>, analyzing AI, mastery, and craft. Here is a selection of recent essays:</p>
 
             <div class="blog-grid">
                 <a href="https://heyybhargav.substack.com/p/2027-is-when-the-bill-arrives" target="_blank"
@@ -181,27 +206,10 @@
                         <p>Read post &rarr;</p>
                     </div>
                 </a>
-                <a href="https://heyybhargav.substack.com/p/the-freedom-in-commitment" target="_blank"
-                    class="blog-card">
-                    <img src="https://substack-post-media.s3.amazonaws.com/public/images/94af4014-0218-4126-b614-16b16dd5b8c2_769x1147.jpeg"
-                        class="blog-img" alt="Thumbnail">
-                    <div class="blog-content">
-                        <h3>The freedom in commitment</h3>
-                        <p>Read post &rarr;</p>
-                    </div>
-                </a>
-                <a href="https://heyybhargav.substack.com/p/the-fomo-of-mastery" target="_blank" class="blog-card">
-                    <img src="https://substack-post-media.s3.amazonaws.com/public/images/752de297-05c0-46fa-a377-bfbd0b005136_736x1306.jpeg"
-                        class="blog-img" alt="Thumbnail">
-                    <div class="blog-content">
-                        <h3>The FOMO of Mastery</h3>
-                        <p>Read post &rarr;</p>
-                    </div>
-                </a>
             </div>
 
-            <div style="margin-top: 1.5rem; text-align: left;">
-                <a href="https://heyybhargav.substack.com" target="_blank" class="btn">Read all on Substack &rarr;</a>
+            <div style="margin-top: 2rem; text-align: left;">
+                <a href="./writing.html" class="btn">View all essays &rarr;</a>
             </div>
         </section>
 

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg-color: #fafbfc;
   --text-primary: #111827;
@@ -7,12 +11,6 @@
   --text-tertiary: #9ca3af;
   --accent: var(--text-primary); 
   --border: #e5e7eb;
-  
-  /* Designer Pastel Cards based on the reference standard */
-  --card-1: #FFF7D1; /* Smoother buttery yellow */
-  --card-2: #EAF5FE; /* Crisper sky blue */
-  --card-3: #DDF7E8; /* Very soft mint green */
-  --card-border: rgba(0,0,0,0.03);
 }
 
 
@@ -34,6 +32,7 @@ main {
   margin: 0 auto;
   opacity: 0;
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
 }
 
 @keyframes fadeIn {
@@ -103,11 +102,15 @@ a.nav-link, a.btn {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-a.nav-link:hover, a.btn:hover {
+a.nav-link:hover, a.btn:hover, a.nav-link.active {
   background: var(--text-primary);
   color: var(--bg-color);
   border-color: var(--text-primary);
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+a.btn {
+  align-self: flex-start;
 }
 
 a.icon-link {
@@ -152,15 +155,27 @@ a.icon-link svg {
   gap: 1.25rem;
 }
 
+.cards-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
 .card {
   padding: 1.75rem 1.5rem;
-  border-radius: 14px;
-  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--bg-color);
+  border: 1px solid var(--border);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .card:hover {
-  box-shadow: 0 8px 24px -6px rgba(0,0,0,0.05);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px -6px rgba(0,0,0,0.06);
 }
 
 .card h3 {
@@ -174,14 +189,26 @@ a.icon-link svg {
 .card p {
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 0;
+  margin-bottom: 1.25rem;
   color: var(--text-secondary);
+  flex: 1;
 }
 
-/* Base pastel card colors */
-.card-1 { background-color: var(--card-1); }
-.card-2 { background-color: var(--card-2); }
-.card-3 { background-color: var(--card-3); }
+.card-link {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.card:hover .card-link {
+  border-bottom-color: var(--text-primary);
+}
 
 /* Work Items */
 .work-item {
@@ -277,9 +304,51 @@ a.icon-link svg {
   border-radius: 10px 10px 0 0;
 }
 
+/* Sidebar Section Navigation */
+.sidebar-nav {
+  position: fixed;
+  left: calc(50% - 360px - 150px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border-left: 1px solid var(--border);
+  padding-left: 1.1rem;
+  z-index: 10;
+}
+
+.sidebar-link {
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  border-bottom: none;
+  padding: 0.15rem 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  opacity: 0.8;
+}
+
+.sidebar-link:hover {
+  color: var(--text-primary);
+  border-bottom: none;
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .sidebar-nav {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   body { padding: 3rem 1.5rem; }
   h1 { font-size: 2.2rem; }
   .cards-grid { grid-template-columns: 1fr; }
+  .cards-grid-2 { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
 }
