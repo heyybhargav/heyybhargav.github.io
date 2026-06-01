@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  scroll-margin-top: 6rem;
+}
+
 :root {
   --bg-color: #fafbfc;
   --text-primary: #111827;
@@ -171,6 +175,7 @@ a.icon-link svg {
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 
 .card:hover {
@@ -206,6 +211,16 @@ a.icon-link svg {
   margin-top: auto;
 }
 
+.card-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
 .card:hover .card-link {
   border-bottom-color: var(--text-primary);
 }
@@ -224,6 +239,7 @@ a.icon-link svg {
 
 .work-item h3 a {
   border-bottom: none;
+  font-weight: inherit;
 }
 
 .work-item h3 a:hover {
@@ -307,10 +323,10 @@ a.icon-link svg {
 /* Sidebar Section Navigation */
 .sidebar-nav {
   position: fixed;
-  left: calc(50% - 360px - 150px);
+  left: calc(50% - 360px - 220px);
   top: 50%;
   transform: translateY(-50%);
-  width: 110px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
