@@ -7,167 +7,130 @@
     <title>Projects | Bhargav Chaudhari</title>
     <meta name="description" content="Projects, SaaS architectures, and GTM strategy engines designed and scaled by Bhargav Chaudhari.">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="prefetch" href="./index.html">
+    <link rel="prefetch" href="./writing.html">
+    <script src="./nav.js" defer></script>
 </head>
 
 <body>
     <main>
-        <nav class="sidebar-nav" aria-label="Page sections">
-            <a href="#provue" class="sidebar-link">Provue AI</a>
-            <a href="#siftl" class="sidebar-link">Siftl</a>
-            <a href="#acharya" class="sidebar-link">Acharya</a>
-            <a href="#token-revolution" class="sidebar-link">Token Rev</a>
+        <nav class="topnav" aria-label="Pages">
+            <a href="./index.html">Home</a>
+            <a href="./projects.html" class="active">Projects</a>
+            <a href="./writing.html">Writing</a>
         </nav>
+
         <header>
-            <h1>Projects 🛠️</h1>
-            <p class="intro">
-                Things I've built and run, from technical SaaS backends to organic distribution engines.
-            </p>
-            <div class="links" style="align-items: center; gap: 0.6rem;">
-                <a href="./index.html" class="nav-link">Home</a>
-                <a href="./projects.html" class="nav-link active">Projects</a>
-                <a href="./writing.html" class="nav-link">Writing</a>
-                <a href="mailto:cbhargav2002@gmail.com" class="nav-link">Contact</a>
-                <div style="display: flex; gap: 0.6rem; align-items: center; margin-left: 0.1rem;">
-                    <a href="https://linkedin.com/in/bhargav-chaudhari" target="_blank" class="nav-link icon-link" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0h.003z"/>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/heyybhargav" target="_blank" class="nav-link icon-link" aria-label="X (Twitter)">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                </div>
+            <div class="prose">
+                <p>From technical SaaS backends to organic distribution engines. Four I keep coming back to:</p>
             </div>
         </header>
 
         <section id="provue">
-            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 5rem;">
-                <div style="flex: 1; height: 1px; background: var(--border);"></div>
-                <span
-                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Scale & Distribution</span>
-            </div>
+            <div class="section-label">Scale &amp; distribution</div>
+            <h2 class="section-statement">Provue AI</h2>
+            <p class="section-lead">Product &amp; GTM driving 300k+ active users.</p>
 
-            <h2 style="margin-top: 0; margin-bottom: 0.5rem; font-size: clamp(2.2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.04em;">
-                Provue AI
-            </h2>
-            <p style="font-size: 1.2rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px;">
-                Product & GTM driving 300k+ active users.
-            </p>
-
-            <div class="card" style="margin-bottom: 2.5rem;">
-                <h3 style="margin-bottom: 1rem;">Scaling a Consumer AI Tool</h3>
-                <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
-                    At Pazago, I directed the product and GTM strategy for Provue AI. I built the underlying workflows, agents, and skills, eventually creating a system that enabled others to build agents with any desired capability and helping scale the product to 300k+ active users.
-                </p>
-                <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
-                    <li><strong>Workflows & Agentic Systems:</strong> Built the underlying workflows, agents, and skills, eventually creating a system that enabled others to build agents with any desired capability.</li>
-                    <li><strong>Growth & GTM Loops:</strong> Structured high-performance organic loops that drove over 5 million views through strategic creator integrations and visual content cycles.</li>
-                    <li><strong>Growth Infrastructure:</strong> Implemented precise user event tracking and cohort funnels to decrease product drop-off rates on onboarding.</li>
+            <div class="detail">
+                <p>At Pazago, I directed product and GTM for Provue AI. I built the underlying workflows, agents, and
+                    skills, eventually creating a system that let others build agents with any desired capability, and
+                    helped scale the product to 300k+ active users.</p>
+                <ul>
+                    <li><strong>Workflows &amp; agentic systems:</strong> built the underlying workflows, agents, and
+                        skills, creating a system that let others build agents with any desired capability.</li>
+                    <li><strong>Growth &amp; GTM loops:</strong> structured high-performance organic loops that drove
+                        5M+ views through strategic creator integrations and visual content cycles.</li>
+                    <li><strong>Growth infrastructure:</strong> implemented precise event tracking and cohort funnels
+                        to cut onboarding drop-off.</li>
                 </ul>
+                <p>Operating at the frontlines of product and GTM taught me to align user delight with distribution
+                    loops from day one. More at
+                    <a href="https://provue.ai" target="_blank" class="ilink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>provue.ai</a>.
+                </p>
             </div>
-            
-            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary);">
-                Operating at the frontlines of product and GTM taught me the importance of aligning user delight with distribution loops from Day 1. Learn more about the company at <a href="https://provue.ai" target="_blank">provue.ai</a>.
-            </p>
         </section>
 
         <section id="siftl">
-            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
-                <div style="flex: 1; height: 1px; background: var(--border);"></div>
-                <span
-                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Side Project</span>
-            </div>
+            <div class="section-label">Side project</div>
+            <h2 class="section-statement">Siftl</h2>
+            <p class="section-lead">An AI-powered content-curation SaaS built from scratch.</p>
 
-            <h2 style="margin-top: 0; margin-bottom: 0.5rem; font-size: clamp(2.2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.04em;">
-                Siftl
-            </h2>
-            <p style="font-size: 1.2rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px;">
-                An AI-powered content curation SaaS built from scratch.
-            </p>
-
-            <div class="card" style="margin-bottom: 2.5rem;">
-                <h3 style="margin-bottom: 1rem;">Core Execution & Architecture</h3>
-                <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
-                    I built Siftl single-handedly to solve my own problem of finding and organizing high-quality online writings. The goal was to run a robust content curation pipeline continuously without racking up hosting or database fees.
-                </p>
-                <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
-                    <li><strong>Serverless Data Parsing:</strong> Structured Node.js CRON tasks configured to fetch, digest, and filter over 10,000 online data points daily.</li>
-                    <li><strong>Zero-Cost Stack:</strong> Engineered the backend inside zero-cost infrastructure limits, proving that scalable software doesn't require massive initial cloud budgets.</li>
-                    <li><strong>Algorithmic Curation:</strong> Built simple, effective NLP heuristic layers to categorize and rank articles by relevance and information density.</li>
+            <div class="detail">
+                <p>I built Siftl single-handedly to solve my own problem of finding and organizing high-quality
+                    online writing, running a content-curation pipeline continuously without racking up hosting or
+                    database fees.</p>
+                <ul>
+                    <li><strong>Serverless data parsing:</strong> Node.js CRON tasks that fetch, digest, and filter
+                        10,000+ online data points daily.</li>
+                    <li><strong>Zero-cost stack:</strong> engineered the backend inside free-tier limits, proving
+                        scalable software doesn't need a big cloud budget.</li>
+                    <li><strong>Algorithmic curation:</strong> simple, effective NLP heuristics to categorize and rank
+                        articles by relevance and information density.</li>
                 </ul>
+                <p>Siftl was a playground for mastering background scheduling, scraping defenses, and clean database
+                    structures. Live at
+                    <a href="https://siftl.com" target="_blank" class="ilink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>siftl.com</a>.
+                </p>
             </div>
-            
-            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary);">
-                Siftl served as a playground for mastering the details of background scheduling, web scraping defenses, and clean database structures. You can visit the live project at <a href="https://siftl.com" target="_blank">siftl.com</a>.
-            </p>
         </section>
 
         <section id="acharya">
-            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
-                <div style="flex: 1; height: 1px; background: var(--border);"></div>
-                <span
-                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">AI Learning Companion</span>
-            </div>
+            <div class="section-label">AI learning companion</div>
+            <h2 class="section-statement">Acharya</h2>
+            <p class="section-lead">Learn anything from any video, podcast, or lecture.</p>
 
-            <h2 style="margin-top: 0; margin-bottom: 0.5rem; font-size: clamp(2.2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.04em;">
-                Acharya
-            </h2>
-            <p style="font-size: 1.2rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px;">
-                Learn anything from any video, podcast, or lecture.
-            </p>
-
-            <div class="card" style="margin-bottom: 2.5rem;">
-                <h3 style="margin-bottom: 1rem;">Core Execution & Architecture</h3>
-                <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
-                    Acharya is designed to act as your personal tutor for online video and audio media. By ingestion of YouTube lectures, podcasts, or local audio uploads, the system constructs a fully interactive classroom.
-                </p>
-                <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
-                    <li><strong>Content Ingestion Pipelines:</strong> Built ingestion handlers to instantly scrape, transcribe, and index raw YouTube video links or direct audio files.</li>
-                    <li><strong>Interactive Study Loops:</strong> Programmed context-aware prompting systems to generate custom notes, flashcards, interactive quizzes, and Q&A guides on-demand.</li>
-                    <li><strong>Minimalist Learning Interface:</strong> Crafted a clean, lightweight UI designed to focus on video consumption alongside rapid question-and-answer interactions.</li>
+            <div class="detail">
+                <p>Acharya acts as a personal tutor for online video and audio. By ingesting YouTube lectures,
+                    podcasts, or local audio uploads, it constructs a fully interactive classroom.</p>
+                <ul>
+                    <li><strong>Content ingestion pipelines:</strong> handlers that scrape, transcribe, and index raw
+                        YouTube links or direct audio files.</li>
+                    <li><strong>Interactive study loops:</strong> context-aware prompting that generates notes,
+                        flashcards, quizzes, and Q&amp;A on demand.</li>
+                    <li><strong>Minimalist interface:</strong> a clean, lightweight UI focused on video consumption
+                        alongside rapid Q&amp;A.</li>
                 </ul>
+                <p>Acharya lowers the barrier to active recall from long-form educational video. Try it at
+                    <a href="https://myacharya.vercel.app/" target="_blank" class="ilink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>myacharya.vercel.app</a>.
+                </p>
             </div>
-            
-            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary);">
-                Acharya lowers the barrier to active recall and learning from long-form educational videos. You can try the live application at <a href="https://myacharya.vercel.app/" target="_blank">myacharya.vercel.app</a>.
-            </p>
         </section>
 
         <section id="token-revolution">
-            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; margin-top: 6rem;">
-                <div style="flex: 1; height: 1px; background: var(--border);"></div>
-                <span
-                    style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase;">Interactive Thesis Explainer</span>
-            </div>
+            <div class="section-label">Interactive thesis explainer</div>
+            <h2 class="section-statement">The Token Revolution</h2>
+            <p class="section-lead">Ribbit Capital's June 2025 tokenized-economy thesis.</p>
 
-            <h2 style="margin-top: 0; margin-bottom: 0.5rem; font-size: clamp(2.2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.04em;">
-                The Token Revolution
-            </h2>
-            <p style="font-size: 1.2rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px;">
-                Ribbit Capital's June 2025 tokenized economy thesis.
-            </p>
-
-            <div class="card" style="margin-bottom: 2.5rem;">
-                <h3 style="margin-bottom: 1rem;">Core Execution & Architecture</h3>
-                <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
-                    I built an interactive explainer synthesizing Ribbit Capital's June 2025 letter. The platform breaks down the taxonomy of stablecoin settlement pipelines, proprietary data token factories, and context flywheels.
-                </p>
-                <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
-                    <li><strong>Machine Legibility Taxonomy:</strong> Modeled the categorization of Access, Memory, Expert, Context, Identity, Knowledge, and Asset tokens.</li>
-                    <li><strong>Interactive Data Interfaces:</strong> Designed beautiful, reactive charts rendering inference cost collapses (1,000x over three years) and stablecoin settlement volume thresholds.</li>
-                    <li><strong>Gamified Retention Loops:</strong> Programmed a client-side context-aware quiz interface testing users on proprietary data moats and agentic resource allocations.</li>
+            <div class="detail">
+                <p>An interactive explainer synthesizing Ribbit Capital's June 2025 letter. It breaks down the
+                    taxonomy of stablecoin settlement pipelines, proprietary data-token factories, and context
+                    flywheels.</p>
+                <ul>
+                    <li><strong>Machine-legibility taxonomy:</strong> modeled Access, Memory, Expert, Context,
+                        Identity, Knowledge, and Asset tokens.</li>
+                    <li><strong>Interactive data interfaces:</strong> reactive charts rendering inference-cost
+                        collapses (1,000x over three years) and settlement-volume thresholds.</li>
+                    <li><strong>Gamified retention loops:</strong> a client-side quiz testing users on data moats and
+                        agentic resource allocation.</li>
                 </ul>
+                <p>It maps the transition where vertical token networks dismantle traditional BPO and software ERPs.
+                    Explore it at
+                    <a href="https://thetokenrevolution.vercel.app/" target="_blank" class="ilink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>thetokenrevolution.vercel.app</a>.
+                </p>
             </div>
-            
-            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary);">
-                The Token Revolution maps the upcoming transition where vertical token networks dismantle traditional BPO and software ERPs. You can explore the thesis explainer at <a href="https://thetokenrevolution.vercel.app/" target="_blank">thetokenrevolution.vercel.app</a>.
-            </p>
         </section>
 
-        <footer style="margin-top: 6rem; border-top: 1px solid var(--border); padding-top: 2rem; font-size: 0.9rem; color: var(--text-tertiary); text-align: center; margin-bottom: 2rem;">
-            © 2026 Bhargav Chaudhari
+        <footer class="site-footer">
+            <span>&copy; 2026 Bhargav Chaudhari</span>
+            <div class="foot-links">
+                <a href="mailto:cbhargav2002@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/bhargavchaudhari" target="_blank">LinkedIn</a>
+                <a href="https://x.com/heyybhargav" target="_blank">X</a>
+            </div>
         </footer>
     </main>
 </body>
