@@ -73,8 +73,23 @@ export function ThemeToggle() {
                         ],
                     },
                     {
-                        duration: 520,
-                        easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                        duration: 450,
+                        /**
+                         * Grows at a legible rate. The first curve here was the site's
+                         * own --ease, cubic-bezier(0.16, 1, 0.3, 1), which is right for
+                         * a 3px hover nudge and wrong for this: it put the circle at
+                         * 49% of its final radius after 52ms and 97% by halfway. Two
+                         * things follow from that, and both were reported. The origin
+                         * is never visible, because the circle is half the screen
+                         * before the eye lands on it, so it does not read as coming
+                         * from the button. And the back half of the animation crawls
+                         * through the last 3% of the growth, which is also the most
+                         * expensive stretch to repaint, so it reads as a stall.
+                         *
+                         * This one is at 19% by a fifth of the way in and 79% by
+                         * halfway. Slower to leave, and it arrives.
+                         */
+                        easing: 'cubic-bezier(0.33, 0, 0.2, 1)',
                         pseudoElement: '::view-transition-new(root)',
                     }
                 );

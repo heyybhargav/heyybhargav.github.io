@@ -134,6 +134,12 @@ main {
 :root[data-theme-switching]::view-transition-old(root) { z-index: 1; }
 :root[data-theme-switching]::view-transition-new(root) { z-index: 2; }
 
+/* The group interpolates for 250ms between two identical keyframes: same width, same
+   height, identity transform at both ends. A no-op that still ends halfway through the
+   reveal, and anything moving inside a group being interpolated is one more thing for
+   the compositor to reconcile. */
+:root[data-theme-switching]::view-transition-group(root) { animation: none; }
+
 p {
   margin: 0 0 1.1rem;
   color: var(--text-secondary);
