@@ -1,0 +1,58 @@
+name: Deploy
+
+# Three triggers, and the schedule is the important one.
+#
+# GitHub Pages serves files, so "the writing page updates when I publish on Substack"
+# has to mean "something rebuilds the site". Nothing else will: a push happens when the
+# site changes, and publishing an essay does not change the site. The daily run is what
+# picks up new posts.
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 06:00 UTC, which is 11:30 IST.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half-uploaded.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # prebuild refreshes data/essays.json from the Substack feed. It is written not to
+      # fail the build if the feed is unreachable: the committed list is the fallback.
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

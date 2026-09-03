@@ -1,17 +1,33 @@
 # Design System & Technical Guidelines
 
-1. **Aesthetics & UI**:
-   - Absolutely minimal, unstyled appearance relying heavily on system defaults.
-   - Clean, legible text using system fonts (`-apple-system`).
-   - Supports light and dark mode out-of-the-box using `prefers-color-scheme`.
-   - Single flat-color background with no noise or textures.
-   - No glassmorphism, glowing accents, or bento grids.
-   - Maximum width constrained to `650px` for optimal reading width on desktop.
+1. **Tech stack**:
+   - Next.js 16 (App Router) with React 19 and TypeScript.
+   - Tailwind v4 is loaded, but the design lives in `app/globals.css` as semantic
+     classes and custom properties. Reach for a token before a utility.
+   - `output: 'export'`. Every page is a file. There is no server at runtime, so
+     nothing may depend on a request: no route handlers, no server actions, no
+     runtime data fetching.
+   - Deployed to GitHub Pages by `.github/workflows/deploy.yml`.
 
-2. **Tech Stack**:
-   - Vanilla HTML5 and simple CSS3.
-   - NO JavaScript entirely. Interactions rely on simple `a:hover` pseudo-classes.
-   - Strictly single-page layout.
+2. **Aesthetics & UI**:
+   - Restrained and monochrome. A single flat background, no noise or texture.
+   - No glassmorphism, glowing accents, gradients, or bento grids.
+   - Light and dark are both first-class, via `prefers-color-scheme`.
+   - Colour, size, and spacing come from the custom properties at the top of
+     `globals.css`. Do not hardcode a hex value in a component.
+   - Reading measure caps at 34em. The column caps at 640px.
 
-3. **Animations**:
-   - NONE.
+3. **Content**:
+   - Prose that appears on more than one page belongs in `lib/site.ts`.
+   - The essay list is generated. Edit `scripts/fetch-essays.mjs`, never
+     `data/essays.json`.
+
+4. **Client JavaScript**:
+   - Server components by default. `'use client'` needs a reason that cannot be
+     satisfied at build time; right now two components have one.
+
+5. **Accessibility**:
+   - Text contrast meets WCAG AA. `--text-muted` is the floor at 4.8:1; do not
+     lighten it.
+   - Every page has exactly one `h1`, and heading levels do not skip.
+   - Anything animated is inside the `prefers-reduced-motion` guard.
