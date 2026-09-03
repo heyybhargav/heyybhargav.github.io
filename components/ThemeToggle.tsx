@@ -48,11 +48,33 @@ export function ThemeToggle() {
         const box = button.current.getBoundingClientRect();
         const x = box.left + box.width / 2;
         const y = box.top + box.height / 2;
-        /** Reach the furthest corner, or the last thing to change is a screen edge. */
-        const radius = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-        );
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        /**
+         * Everything below is a ratio, and that is the whole point.
+         *
+         * These coordinates were in pixels, and on a 2x display the circle came out at
+         * half the distance from the top left: a button centred at 1024 drew its wave
+         * at 512. getBoundingClientRect answers in CSS pixels, and the box these values
+         * are resolved against is the transition's own snapshot, which is not obliged to
+         * be measured in the same unit. On a 1x screen the two agree and it looks
+         * correct, which is why testing it on one proved nothing.
+         *
+         * A percentage cannot disagree. It is resolved against the snapshot's own box,
+         * whatever that box turns out to be measured in, so this is right at any device
+         * pixel ratio and at any page zoom.
+         */
+        const atX = (x / w) * 100;
+        const atY = (y / h) * 100;
+
+        /**
+         * Far enough to reach the furthest corner, or the last thing to change is a
+         * screen edge. A percentage radius on circle() resolves against
+         * sqrt(w² + h²) / sqrt(2), so the reach has to be converted into that.
+         */
+        const reach = Math.hypot(Math.max(x, w - x), Math.max(y, h - y));
+        const radius = (reach * Math.SQRT2 * 100) / Math.hypot(w, h);
 
         /**
          * Marks the document for the duration, so the clip-path rules in globals.css
@@ -68,8 +90,8 @@ export function ThemeToggle() {
                 root.animate(
                     {
                         clipPath: [
-                            `circle(0px at ${x}px ${y}px)`,
-                            `circle(${radius}px at ${x}px ${y}px)`,
+                            `circle(0% at ${atX}% ${atY}%)`,
+                            `circle(${radius}% at ${atX}% ${atY}%)`,
                         ],
                     },
                     {
