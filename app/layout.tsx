@@ -50,7 +50,16 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className={inter.variable}>
+        <html lang="en" className={inter.variable} suppressHydrationWarning>
+            <head>
+                {/* Runs before the first paint, so a reader who chose the theme opposite
+                    to their system setting never sees the wrong one flash first. */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
+                    }}
+                />
+            </head>
             <body>
                 <main>
                     {children}

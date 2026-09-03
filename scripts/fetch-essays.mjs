@@ -2,10 +2,10 @@
  * Pulls the Substack feed and leaves behind two things the build can use offline:
  * data/essays.json, and a 96px cover for each post in public/images/essays.
  *
- * It runs as `prebuild`, and the deploy workflow also runs it on a daily schedule.
- * That is what "the site updates itself when I publish" means on GitHub Pages: there
- * is no server to ask at request time, so the answer has to be baked in and the bake
- * has to be re-run.
+ * It runs as `prebuild`, so every deploy picks up whatever the feed says at that
+ * moment. There is no server to ask at request time on GitHub Pages, so the answer has
+ * to be baked in, which means a new post reaches the site when the site is next built:
+ * on a push, or on Run workflow from the Actions tab.
  *
  * Nothing here is allowed to fail the build. Substack being down, a cover image
  * 404ing, no network at all: each of those falls back to whatever is already

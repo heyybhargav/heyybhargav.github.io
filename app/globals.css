@@ -44,18 +44,38 @@
   --step-3: 2rem;
 }
 
+/* The dark set, declared once and applied from two places.
+   #f2f2f3 on #0d0d0f measured 17.3:1. That is not a readable page, it is a lightbox:
+   AA asks for 4.5:1 and everything past roughly 15:1 starts to glare, especially on an
+   OLED phone at night. The ground is lifted and the ink is pulled off white, which
+   lands at 13.4:1. Still far above the requirement, and it stops stinging. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0d0d0f;
-    --surface: #151517;
-    --text: #f2f2f3;
-    --text-secondary: #b0b0b6;
-    --text-muted: #85858c;
-    --border: #232326;
-    --border-strong: #35353b;
-    --tile: #26262b;
-    --tile-ink: #ffffff;
+  /* System preference decides, unless the reader has picked light. */
+  :root:not([data-theme="light"]) {
+    --bg: #16161a;
+    --surface: #1d1d22;
+    --text: #dedee2;
+    --text-secondary: #a3a3ab;
+    --text-muted: #7f7f88;
+    --border: #2a2a31;
+    --border-strong: #3d3d46;
+    --tile: #2a2a31;
+    --tile-ink: #f4f4f6;
   }
+}
+
+/* An explicit choice wins in both directions, which is what makes the toggle work
+   for someone whose system is set the other way. */
+:root[data-theme="dark"] {
+  --bg: #16161a;
+  --surface: #1d1d22;
+  --text: #dedee2;
+  --text-secondary: #a3a3ab;
+  --text-muted: #7f7f88;
+  --border: #2a2a31;
+  --border-strong: #3d3d46;
+  --tile: #2a2a31;
+  --tile-ink: #f4f4f6;
 }
 
 /* ---------- Base ---------- */
@@ -97,6 +117,22 @@ main {
 ::view-transition-new(root) {
   animation-duration: 0.28s;
 }
+
+/* The theme switch borrows the same pseudo-elements as the navigation transition above
+   and wants the opposite of them: no cross-fade, and the incoming page stacked over the
+   outgoing one so a growing circle can reveal it. Scoped to the attribute the toggle
+   sets for the duration, so the two never argue.
+
+   The circle itself is animated from ThemeToggle, which is where the button's position
+   and the viewport size are known. */
+:root[data-theme-switching]::view-transition-old(root),
+:root[data-theme-switching]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+:root[data-theme-switching]::view-transition-old(root) { z-index: 1; }
+:root[data-theme-switching]::view-transition-new(root) { z-index: 2; }
 
 p {
   margin: 0 0 1.1rem;
@@ -171,6 +207,51 @@ a.ilink:hover svg { opacity: 1; }
 }
 
 .topnav a:hover { color: var(--text); }
+
+/* Pushed to the end of the nav row rather than given a corner of its own: the nav is
+   already the row of things you can do from anywhere on the site. */
+.theme-toggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-top: -6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--border);
+}
+
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Which glyph shows is decided in CSS, from the same signals that decide the palette.
+   Doing it in JS would mean the button renders one way on the server and another after
+   hydration, which is a flash on every load to save nothing. */
+.theme-toggle .sun { display: none; }
+.theme-toggle .moon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
+}
+
+:root[data-theme="dark"] .theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .moon { display: none; }
+:root[data-theme="light"] .theme-toggle .sun { display: none; }
+:root[data-theme="light"] .theme-toggle .moon { display: block; }
 
 .topnav a.active { color: var(--text); }
 

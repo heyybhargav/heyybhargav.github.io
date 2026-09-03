@@ -1,17 +1,15 @@
 name: Deploy
 
-# Three triggers, and the schedule is the important one.
+# A push, or the button.
 #
-# GitHub Pages serves files, so "the writing page updates when I publish on Substack"
-# has to mean "something rebuilds the site". Nothing else will: a push happens when the
-# site changes, and publishing an essay does not change the site. The daily run is what
-# picks up new posts.
+# There is no schedule on purpose. GitHub Pages serves files, so the writing page only
+# picks up a new Substack post when something rebuilds the site, and a cron running
+# every day to catch a post every couple of months is thirty wasted runs per essay.
+# After publishing, hit Run workflow on the Actions tab and the new post is live in
+# about a minute.
 on:
   push:
     branches: [main]
-  schedule:
-    # 06:00 UTC, which is 11:30 IST.
-    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -38,7 +36,8 @@ jobs:
       - run: npm ci
 
       # prebuild refreshes data/essays.json from the Substack feed. It is written not to
-      # fail the build if the feed is unreachable: the committed list is the fallback.
+      # fail the build if the feed is unreachable: the committed list is the fallback,
+      # which is what makes it safe to run on every push.
       - run: npm run build
 
       - uses: actions/configure-pages@v5

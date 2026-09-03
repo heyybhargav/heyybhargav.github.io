@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 /**
  * The list is read from data/essays.json, which scripts/fetch-essays.mjs rewrites from
  * the Substack feed before every build. Read at build, not at request: there is no
- * request, this whole site is files on GitHub Pages. The deploy workflow runs on a
- * daily schedule for exactly this reason.
+ * request, this whole site is files on GitHub Pages. So a new post appears here when
+ * the site is next deployed, not when it is published.
  */
 export default function Writing() {
     return (

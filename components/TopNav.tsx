@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ThemeToggle } from './ThemeToggle';
 
 const pages = [
     { key: 'home', href: '/', label: 'Home' },
@@ -29,6 +30,7 @@ export function TopNav({ active }: { active: NavKey }) {
                     {page.label}
                 </Link>
             ))}
+            <ThemeToggle />
         </nav>
     );
 }
