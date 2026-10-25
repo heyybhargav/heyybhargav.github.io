@@ -27,7 +27,7 @@ export default function Home() {
                 built the app and the growth loops behind 350k+ users. iit bombay, economics '24.
             </p>
             <div className="mk-meta">
-                <a href="mailto:cbhargav2002@gmail.com">email</a>
+                <a href="mailto:heyybhargav@gmail.com">email</a>
                 <a href="https://x.com/heyybhargav" target="_blank" rel="noreferrer">x</a>
                 <a href="https://linkedin.com/in/bhargavchaudhari" target="_blank" rel="noreferrer">linkedin</a>
                 <a href="#essays" onClick={(e) => { e.preventDefault(); document.getElementById('essays')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>essays</a>
