@@ -10,7 +10,7 @@ export const site = {
     name: 'Bhargav Chaudhari',
     role: 'AI operator, IIT Bombay',
     url: 'https://heyybhargav.github.io',
-    email: 'cbhargav2002@gmail.com',
+    email: 'heyybhargav@gmail.com',
     linkedin: 'https://linkedin.com/in/bhargavchaudhari',
     x: 'https://x.com/heyybhargav',
     substack: 'https://heyybhargav.substack.com',
