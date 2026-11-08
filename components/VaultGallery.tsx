@@ -5,6 +5,9 @@ import img_raptor from '@/app/vault/img-raptor';
 import img_delusional from '@/app/vault/img-delusional';
 import img_courage from '@/app/vault/img-courage';
 import img_uncertainty from '@/app/vault/img-uncertainty';
+import { chart, mastery, truthful } from '@/app/vault/img-more1';
+import { deep, personally } from '@/app/vault/img-more2';
+import { commitment, emerson } from '@/app/vault/img-more3';
 
 type Item = { src: string; kind: string; alt: string };
 const items: Item[] = [
@@ -13,6 +16,13 @@ const items: Item[] = [
     { src: img_delusional, kind: 'build', alt: 'A man crouching in a hangar full of scattered wreckage, with the text: Be delusional.' },
     { src: img_courage, kind: 'words', alt: 'A hiker on a mountain ridge at sunrise, with the quote: May I find the courage to disappoint people who expect me to stay small. Michell C. Clark' },
     { src: img_uncertainty, kind: 'ideas', alt: 'An illustration of a man on a path leading into tangled roller-coaster tracks above clouds, with the text: Tolerance for uncertainty is the most valuable human trait' },
+    { src: chart, kind: 'ideas', alt: 'A chart by William Meijer: unkind truths trend a system upward over time, kind lies trend it downward' },
+    { src: mastery, kind: 'words', alt: 'Text: Mastery is the best goal because the rich can\u2019t buy it, the impatient can\u2019t rush it, the privileged can\u2019t inherit it, and nobody can steal it. You can only earn it through hard work. Mastery is the ultimate status.' },
+    { src: truthful, kind: 'words', alt: 'Text: Be truthful. Be sincere. Do you really want to be rid of your problems? Man gets what he wants.' },
+    { src: deep, kind: 'words', alt: 'Text: Going Deep and Staying Curious, by Patrick Collison, Advice (2021)' },
+    { src: personally, kind: 'words', alt: 'Text: don\u2019t take it personally. Whatever happens around you, don\u2019t take it personally.' },
+    { src: commitment, kind: 'words', alt: 'Text: There\u2019s a big difference between being interested in something and being committed to it.' },
+    { src: emerson, kind: 'words', alt: 'Ralph Waldo Emerson: Write it on your heart that every day is the best day in the year.' },
 ];
 const kinds = ['all', ...Array.from(new Set(items.map((i) => i.kind)))];
 
