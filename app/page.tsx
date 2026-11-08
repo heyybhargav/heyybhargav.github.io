@@ -1,6 +1,7 @@
 "use client";
 import type { ReactNode } from 'react';
 import allEssays from '@/data/essays.json';
+import { VaultPeek } from '@/components/VaultPeek';
 const selectedEssays = [
  {title:'23 questions that expose you', url:'https://heyybhargav.substack.com/p/23-questions-that-expose-you'},
  {title:'the freedom in commitment', url:'https://heyybhargav.substack.com/p/the-freedom-in-commitment'},
@@ -161,6 +162,7 @@ export default function Home() {
                 </div>
             </div>
         </Group>
+        <VaultPeek />
 
     </div>;
                         }
