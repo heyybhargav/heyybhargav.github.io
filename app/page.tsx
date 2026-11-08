@@ -31,6 +31,7 @@ export default function Home() {
                 <a href="https://x.com/heyybhargav" target="_blank" rel="noreferrer">x</a>
                 <a href="https://linkedin.com/in/bhargavchaudhari" target="_blank" rel="noreferrer">linkedin</a>
                 <a href="#essays" onClick={(e) => { e.preventDefault(); document.getElementById('essays')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>essays</a>
+                <a href="/vault/">vault</a>
             </div>
         </div>
 
