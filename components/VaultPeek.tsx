@@ -5,7 +5,8 @@ const css = `
 .vp-grid a { display:block; height:118px; }
 .vp-grid img { display:block; width:100%; height:100%; object-fit:cover; border-radius:8px; border:1px solid var(--ds-hairline,#deded6); transition:transform .4s cubic-bezier(.16,1,.3,1); }
 .vp-grid a:hover img { transform:translateY(-2px); }
-.vp-more { display:inline-block; margin-top:14px; }
+.vp-more { display:block; width:fit-content; margin-top:11px; padding:3px 0; color:var(--ds-ink,#282825); text-decoration:none; box-shadow:inset 0 -1px 0 var(--ds-hairline,#deded6); }
+.vp-more:hover { box-shadow:inset 0 -1px 0 var(--ds-ink,#282825); }
 `;
 
 export function VaultPeek() {
@@ -24,3 +25,4 @@ export function VaultPeek() {
         </section>
     );
 }
+
