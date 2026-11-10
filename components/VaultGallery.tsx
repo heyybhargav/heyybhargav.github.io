@@ -32,13 +32,13 @@ body:has(.vv) main { width:min(100% - 40px, 620px); max-width:620px; margin:0 au
 body:has(.vv) .site-footer { display:none; }
 @media(max-width:600px) { body:has(.vv) main { padding-top:24px; } }
 .vv a { color:inherit; }
-.vv { --ink:#282825; --ink2:#66665f; --hair:#deded6; --teal:#3f746b; --serif:Georgia,"Times New Roman",serif; background:#faf9f6; color:#282825; font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; padding:0; }
+.vv { --ink:#282825; --ink2:#66665f; --hair:#deded6; --teal:#3f746b; --serif:Georgia,"Times New Roman",serif; background:#faf9f6; color:#282825; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; padding:0; }
 .vv button { all: unset; cursor: pointer; box-sizing: border-box; }
 .vv a.vv-back { font-size:13px; color:var(--ink2); box-shadow:inset 0 -1px 0 var(--hair); }
 .vv .vv-back { display:inline-block; text-decoration:none; font-size:13px; color:var(--ink2); box-shadow:inset 0 -1px 0 var(--hair); }
 .vv header { margin:28px 0 22px; }
-.vv h1 { font:400 34px/1.1 var(--serif); letter-spacing:-.025em; margin:0; }
-.vv-sub { margin:10px 0 0; color:var(--ink2); font-size:14px; max-width:34em; }
+.vv h1 { font:400 26px/1.2 var(--serif); letter-spacing:-.025em; color:var(--ink); margin:0; }
+.vv-sub { margin:10px 0 0; color:var(--ink2); font-size:14px; line-height:24px; max-width:34em; }
 .vv-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; border-top:1px solid var(--hair); padding-top:14px; margin-bottom:18px; }
 .vv-chips { display:flex; flex-wrap:wrap; gap:6px 18px; }
 .vv-chips button { font-size:13px; color:var(--ink2); padding:2px 0; box-shadow:inset 0 -1px 0 transparent; transition:color .2s, box-shadow .2s; }
@@ -60,6 +60,7 @@ body:has(.vv) .site-footer { display:none; }
 .vv-lb button { position:absolute; font-size:13px; color:var(--ink2); padding:8px 10px; }
 .vv-lb button:hover { color:var(--ink); }
 .vv-lb .vv-x { bottom:18px; left:50%; transform:translateX(-50%); border-bottom:1px solid var(--hair); } .vv-lb .vv-p { left:6px; top:50%; } .vv-lb .vv-n { right:6px; top:50%; }
+.vv a:focus-visible, .vv button:focus-visible { outline:2px solid #3f746b; outline-offset:4px; }
 @media (prefers-reduced-motion: reduce) { .vv * { animation:none !important; transition:none !important; } }`;
 
 export function VaultGallery() {
@@ -125,3 +126,4 @@ export function VaultGallery() {
         </div>
     );
 }
+
