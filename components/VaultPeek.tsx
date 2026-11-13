@@ -17,7 +17,7 @@ export function VaultPeek() {
         <section className="home-section">
             <style>{css}</style>
             <h2 className="home-label">from the vault</h2>
-            <p className="vp-caption">favourites from <a href="https://mymind.com/mobile" target="_blank" rel="noreferrer">my mind</a></p>
+            <p className="vp-caption">favourites from my mind</p>
             <div className="vp-grid">
                 {peekImgs.map((src, i) => (
                     <a key={i} href="/vault/" aria-label="open the vault" style={{ flex: `${Math.round(peekRatios[i] * 100)} 1 ${Math.round(peekRatios[i] * 118)}px`, maxWidth: `${Math.round(peekRatios[i] * 118 * 1.3)}px` }}>
