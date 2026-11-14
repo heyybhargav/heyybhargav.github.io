@@ -25,12 +25,12 @@ export const metadata: Metadata = {
         default: site.name,
         template: `%s | ${site.name}`,
     },
-    description: 'AI operator from IIT Bombay. Product, strategy, and GTM execution.',
+    description: 'Builder, reader, writer.',
     openGraph: {
         type: 'website',
         siteName: site.name,
         title: site.name,
-        description: 'AI operator from IIT Bombay. Product, strategy, and GTM execution.',
+        description: 'Builder, reader, writer.',
     },
     twitter: {
         card: 'summary_large_image',
