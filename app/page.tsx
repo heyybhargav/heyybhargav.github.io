@@ -22,7 +22,7 @@ export default function Home() {
                 </div>
             </div>
             <p className="mk-intro">
-                i build products and then figure out how to get them into people's hands. right now on the business
+                i build products and then figure out how to get them into people's hands. right now on the deployment
                 team at <a href="https://bolna.ai" target="_blank" rel="noreferrer">bolna</a>, taking voice AI to indian
                 enterprises. before that, first hire at <a href="https://provue.ai/" target="_blank" rel="noreferrer">provue</a> -
                 built the app and the growth loops behind 350k+ users. iit bombay, economics '24.
@@ -58,7 +58,7 @@ export default function Home() {
 
         <Group label="work so far" heading>
             <div className="mk-entry">
-                <div className="mk-entry-head"><h3>bolna - business team</h3><span className="mk-when">2026 - now</span></div>
+                <div className="mk-entry-head"><h3>bolna - deployment team</h3><span className="mk-when">2026 - now</span></div>
                 <p>taking an india-first voice AI calling platform to market.</p>
             </div>
             <div className="mk-entry">
