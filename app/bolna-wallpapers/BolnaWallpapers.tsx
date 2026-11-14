@@ -59,10 +59,9 @@ export function BolnaWallpapers() {
     return (
         <div className="bw">
             <style>{css}</style>
-            <a className="bw-back" href="/">home</a>
             <header>
                 <h1>bolna wallpapers</h1>
-                <p className="bw-sub">a small set of desktop wallpapers carrying the bolna mark. every piece is 3840 &times; 2160 and saves straight to your device.</p>
+                <p className="bw-sub">a small set of desktop wallpapers carrying the bolna mark. every piece is 3840 &times; 2160.</p>
             </header>
             {pieces.map((p) => (
                 <figure key={p.name} className="bw-item">
@@ -92,7 +91,6 @@ export function BolnaWallpapers() {
                     ))}
                 </div>
             </figure>
-            <div className="bw-end"><span>the mark is traced from a sticker photo, not the official vector.</span><a href="/">back to home</a></div>
         </div>
     );
                                                                                                   }
