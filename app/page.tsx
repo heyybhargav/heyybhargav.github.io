@@ -58,7 +58,7 @@ export default function Home() {
 
         <Group label="work so far" heading>
             <div className="mk-entry">
-                <div className="mk-entry-head"><h3>bolna - deployment team</h3><span className="mk-when">2026 - now</span></div>
+                <div className="mk-entry-head"><h3>bolna - deployments</h3><span className="mk-when">2026 - now</span></div>
                 <p>taking an india-first voice AI calling platform to market.</p>
             </div>
             <div className="mk-entry">
