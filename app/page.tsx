@@ -22,7 +22,7 @@ export default function Home() {
                 </div>
             </div>
             <p className="mk-intro">
-                i build products and then figure out how to get them into people's hands. right now on the deployment
+                i build products and then figure out how to get them into people's hands. right now on the deployments
                 team at <a href="https://bolna.ai" target="_blank" rel="noreferrer">bolna</a>, taking voice AI to indian
                 enterprises. before that, first hire at <a href="https://provue.ai/" target="_blank" rel="noreferrer">provue</a> -
                 built the app and the growth loops behind 350k+ users. iit bombay, economics '24.
