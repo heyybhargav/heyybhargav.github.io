@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, type ReactNode } from 'react';
+import { useRef, useState, type PointerEvent, type ReactNode } from 'react';
 import { books as booksA } from '@/lib/bookshelf-books-a';
 import { books as booksB } from '@/lib/bookshelf-books-b';
 import allEssays from '@/data/essays.json';
@@ -19,19 +19,38 @@ const books = [...booksA, ...booksB];
 function Shelf() {
  const trackRef = useRef<HTMLDivElement>(null);
  const [current, setCurrent] = useState(0);
+ const hoverRef = useRef({x: -1, y: -1, until: 0});
+ const hoverBook = (e: PointerEvent<HTMLDivElement>) => {
+   if (e.pointerType !== 'mouse' || e.buttons !== 0) return;
+   const previous = hoverRef.current;
+   const moved = e.clientX !== previous.x || e.clientY !== previous.y;
+   hoverRef.current = {...previous, x: e.clientX, y: e.clientY};
+   // Moving book surfaces must never select another book under a still pointer.
+   if (!moved || performance.now() < previous.until) return;
+   const surface = (e.target as HTMLElement).closest<HTMLElement>('[data-book-index]');
+   if (!surface) return;
+   const index = Number(surface.dataset.bookIndex);
+   if (index === current) return;
+   // Ignore layout-driven pointer crossings while this book opens and centers.
+   hoverRef.current.until = performance.now() + 450;
+   go(index);
+ };
+
  const go = (i: number) => {
    trackRef.current?.scrollTo({left: Math.max(0,Math.min(10,i))*PITCH, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth'});
  };
  return <div className="mk-shelfwrap">
   <div className="mk-glow mk-glow-a"/><div className="mk-glow mk-glow-b"/>
   <div className="mk-shelfrow" ref={trackRef} role="listbox" tabIndex={0} aria-label="books i recommend"
+   onPointerMove={hoverBook}
+   onPointerLeave={() => {hoverRef.current.x = -1; hoverRef.current.y = -1;}}
    onScroll={() => {
     const el=trackRef.current; if(!el) return;
     setCurrent(Math.max(0,Math.min(10,Math.round(el.scrollLeft/PITCH))));
 
    }}
    onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(current+(e.key==='ArrowRight'?1:-1));}if(e.key==='Home'){e.preventDefault();go(0)}if(e.key==='End'){e.preventDefault();go(10)}}}>
-   {books.map((book,i)=><div key={book.title} id={`book-${i}`} role="option" aria-label={book.title} aria-selected={current===i} className={`mk-bk ${i===current?'is-active':i<current?'is-before':'is-after'}`} onClick={()=>go(i)}>
+   {books.map((book,i)=><div key={book.title} id={`book-${i}`} data-book-index={i} role="option" aria-label={book.title} aria-selected={current===i} className={`mk-bk ${i===current?'is-active':i<current?'is-before':'is-after'}`} onClick={()=>go(i)}>
     <div className="mk-flip">
      <div className="mk-spine" style={{background:book.spine}}><span>{book.title}</span></div>
      <div className="mk-face"><img src={book.cover} alt={`${book.title} cover`}/></div>
@@ -119,4 +138,4 @@ export default function Home() {
         <VaultPeek />
 
     </div>;
-                        }
+}
