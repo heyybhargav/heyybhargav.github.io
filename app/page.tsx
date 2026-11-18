@@ -19,31 +19,26 @@ const books = [...booksA, ...booksB];
 function Shelf() {
  const trackRef = useRef<HTMLDivElement>(null);
  const [current, setCurrent] = useState(0);
- const hoverRef = useRef({x: -1, y: -1, until: 0});
- const hoverBook = (e: PointerEvent<HTMLDivElement>) => {
+ const pointerRef = useRef({x: -1, index: -1});
+ const browseWithPointer = (e: PointerEvent<HTMLDivElement>) => {
    if (e.pointerType !== 'mouse' || e.buttons !== 0) return;
-   const previous = hoverRef.current;
-   const moved = e.clientX !== previous.x || e.clientY !== previous.y;
-   hoverRef.current = {...previous, x: e.clientX, y: e.clientY};
-   // Moving book surfaces must never select another book under a still pointer.
-   if (!moved || performance.now() < previous.until) return;
-   const surface = (e.target as HTMLElement).closest<HTMLElement>('[data-book-index]');
-   if (!surface) return;
-   const index = Number(surface.dataset.bookIndex);
-   if (index === current) return;
-   // Ignore layout-driven pointer crossings while this book opens and centers.
-   hoverRef.current.until = performance.now() + 450;
+   // Map the whole shelf window, including its empty space, to the full shelf.
+   // Vertical motion and book animation under a still cursor do not browse.
+   if (e.clientX === pointerRef.current.x) return;
+   const bounds = e.currentTarget.getBoundingClientRect();
+   const progress = Math.max(0, Math.min(1, (e.clientX - bounds.left) / bounds.width));
+   const index = Math.round(progress * (books.length - 1));
+   pointerRef.current.x = e.clientX;
+   if (index === pointerRef.current.index) return;
+   pointerRef.current.index = index;
    go(index);
  };
-
  const go = (i: number) => {
    trackRef.current?.scrollTo({left: Math.max(0,Math.min(10,i))*PITCH, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth'});
  };
- return <div className="mk-shelfwrap">
+ return <div className="mk-shelfwrap" onPointerMove={browseWithPointer} onPointerLeave={() => {pointerRef.current = {x: -1, index: -1};}}>
   <div className="mk-glow mk-glow-a"/><div className="mk-glow mk-glow-b"/>
   <div className="mk-shelfrow" ref={trackRef} role="listbox" tabIndex={0} aria-label="books i recommend"
-   onPointerMove={hoverBook}
-   onPointerLeave={() => {hoverRef.current.x = -1; hoverRef.current.y = -1;}}
    onScroll={() => {
     const el=trackRef.current; if(!el) return;
     setCurrent(Math.max(0,Math.min(10,Math.round(el.scrollLeft/PITCH))));
@@ -138,4 +133,4 @@ export default function Home() {
         <VaultPeek />
 
     </div>;
-}
+             }
